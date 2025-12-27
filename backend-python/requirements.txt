@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+scikit-learn
+pandas
+numpy
+presidio-analyzer
+presidio-anonymizer
+chromadb
+sentence-transformers
+openai
+python-dotenv

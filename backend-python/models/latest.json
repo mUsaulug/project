@@ -1,0 +1,7 @@
+{
+  "timestamp": "20251226T235010Z",
+  "dataset_hash": "c419aa12f6b39e508b05edef9fcc658fa43cf0b194b46f74ff6d3f215a9e9da6",
+  "category_model_path": "models/category_model_20251226T235010Z.pkl",
+  "urgency_model_path": "models/urgency_model_20251226T235010Z.pkl",
+  "model_card_path": "reports/model_card_20251226T235010Z.json"
+}

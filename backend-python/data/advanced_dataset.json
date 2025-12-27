@@ -1,0 +1,74 @@
+[
+    {
+        "text": "Kartım kırıldı yenisini istiyorum.",
+        "category": "CARD_LIMIT_CREDIT",
+        "urgency": "GREEN",
+        "comment": "Edge Case: Physical damage, not fraud. Often confused with lost/stolen."
+    },
+    {
+        "text": "Atm kartımı yuttu geri vermiyor.",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "RED",
+        "comment": "Edge Case: Access issue, high urgency, distinct from fraud."
+    },
+    {
+        "text": "Kartımı internete kapatmak istiyorum.",
+        "category": "INFORMATION_REQUEST",
+        "urgency": "GREEN",
+        "comment": "Control request, not a complaint."
+    },
+    {
+        "text": "Hesabımdan para çıktı ama karşı tarafa gitmemiş, havuzda mı kaldı?",
+        "category": "TRANSFER_DELAY",
+        "urgency": "YELLOW",
+        "comment": "Specific banking terminology 'havuz' (pool)."
+    },
+    {
+        "text": "Kredi kartı borcumu ödedim ama limitim açılmadı.",
+        "category": "CARD_LIMIT_CREDIT",
+        "urgency": "YELLOW",
+        "comment": "Limit refresh delay, common frustration."
+    },
+    {
+        "text": "Uygulama açılıyor ama beyaz ekranda kalıyor.",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "YELLOW",
+        "comment": "Technical glitch, distinct from 'wrong password'."
+    },
+    {
+        "text": "Kampanya katılım mesajı gelmedi, katıldım mı bilmiyorum.",
+        "category": "CAMPAIGN_POINTS_REWARDS",
+        "urgency": "GREEN",
+        "comment": "Uncertainty about status."
+    },
+    {
+        "text": "Harcama itirazı formunu doldurdum sonuç ne zaman çıkar?",
+        "category": "CHARGEBACK_DISPUTE",
+        "urgency": "GREEN",
+        "comment": "Process inquiry, low urgence."
+    },
+    {
+        "text": "Şüpheli işlem bildirimi geldi ama işlemi ben yaptım, kartımı açın.",
+        "category": "FRAUD_UNAUTHORIZED_TX",
+        "urgency": "RED",
+        "comment": "Hard Negative: Keyword 'Fraud' present, but it's a False Positive recovery."
+    },
+    {
+        "text": "Yurtdışındayım sms gelmiyor, giriş yapamıyorum.",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "RED",
+        "comment": "Context: Roaming issue."
+    },
+    {
+        "text": "Ekstremin e-posta ile gelmesini istiyorum.",
+        "category": "INFORMATION_REQUEST",
+        "urgency": "GREEN",
+        "comment": "Service channel change."
+    },
+    {
+        "text": "Para transferi yaparken alıcı ismini yanlış yazdım düzeltebilir miyim?",
+        "category": "TRANSFER_DELAY",
+        "urgency": "YELLOW",
+        "comment": "Post-transaction correction request."
+    }
+]

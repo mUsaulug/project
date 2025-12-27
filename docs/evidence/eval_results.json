@@ -1,0 +1,701 @@
+{
+  "total": 20,
+  "category_correct": 18,
+  "urgency_correct": 0,
+  "pii_leaked": 1,
+  "pii_masked_correctly": 3,
+  "errors": 0,
+  "latencies": [
+    0.7973849773406982,
+    0.4881289005279541,
+    0.4705498218536377,
+    0.4962582588195801,
+    0.4748647212982178,
+    0.4778101444244385,
+    0.559248685836792,
+    0.49279189109802246,
+    0.48372459411621094,
+    0.5006420612335205,
+    0.5335419178009033,
+    0.5169458389282227,
+    0.5044867992401123,
+    0.581235408782959,
+    0.5363783836364746,
+    0.542250394821167,
+    0.5128388404846191,
+    0.4874112606048584,
+    0.46323275566101074,
+    0.5058801174163818
+  ],
+  "details": [
+    {
+      "id": 1,
+      "text": "Kartımdan bilgim dışında 500 TL çekilmiş.",
+      "expected_category": "FRAUD_UNAUTHORIZED_TX",
+      "expected_urgency": "HIGH",
+      "latency_ms": 797.38,
+      "response": {
+        "id": 4,
+        "kategori": "DOLANDIRICILIK_YETKISIZ_ISLEM",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your FRAUD_UNAUTHORIZED_TX complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6978097227917068,
+          "oncelik": 0.8539593259309165
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 2,
+      "text": "Hesabımda tanımadığım bir işlem var, TC: 12345678901",
+      "expected_category": "FRAUD_UNAUTHORIZED_TX",
+      "expected_urgency": "HIGH",
+      "pii_status": "MASKED",
+      "latency_ms": 488.13,
+      "response": {
+        "id": 5,
+        "kategori": "DOLANDIRICILIK_YETKISIZ_ISLEM",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your FRAUD_UNAUTHORIZED_TX complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.7497076291504907,
+          "oncelik": 0.882290178687614
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 3,
+      "text": "Kredi kartım çalındı, hemen kapatın.",
+      "expected_category": "FRAUD_UNAUTHORIZED_TX",
+      "expected_urgency": "HIGH",
+      "latency_ms": 470.55,
+      "response": {
+        "id": 6,
+        "kategori": "KART_LIMIT_KREDI",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CARD_LIMIT_CREDIT complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.7244048102305273,
+          "oncelik": 0.8443606375419171
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": false,
+      "urgency_match": false
+    },
+    {
+      "id": 4,
+      "text": "Mobil bankacılıkta şüpheli işlem görüyorum, IBAN: TR330006100519786457841326",
+      "expected_category": "FRAUD_UNAUTHORIZED_TX",
+      "expected_urgency": "HIGH",
+      "pii_status": "LEAKED",
+      "latency_ms": 496.26,
+      "response": {
+        "id": 7,
+        "kategori": "DOLANDIRICILIK_YETKISIZ_ISLEM",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your FRAUD_UNAUTHORIZED_TX complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6976825044185443,
+          "oncelik": 0.8694223301918149
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 5,
+      "text": "Aynı işlemden iki kere ücret alınmış.",
+      "expected_category": "CHARGEBACK_DISPUTE",
+      "expected_urgency": "MEDIUM",
+      "latency_ms": 474.86,
+      "response": {
+        "id": 8,
+        "kategori": "IADE_ITIRAZ",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your CHARGEBACK_DISPUTE complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6763472928840529,
+          "oncelik": 0.81100725763649
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 6,
+      "text": "İade ettiğim ürünün parası hala yatmadı.",
+      "expected_category": "CHARGEBACK_DISPUTE",
+      "expected_urgency": "MEDIUM",
+      "latency_ms": 477.81,
+      "response": {
+        "id": 9,
+        "kategori": "TRANSFER_GECIKMESI",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your TRANSFER_DELAY complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": true,
+        "review_id": "725703cf-e43d-4a5f-8a18-f86ab9fbb4ed",
+        "guven_skorlari": {
+          "kategori": 0.3949847167634464,
+          "oncelik": 0.7574202271079916
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": false,
+      "urgency_match": false
+    },
+    {
+      "id": 7,
+      "text": "Siparişi iptal ettim ama param iade edilmedi.",
+      "expected_category": "CHARGEBACK_DISPUTE",
+      "expected_urgency": "MEDIUM",
+      "latency_ms": 559.25,
+      "response": {
+        "id": 10,
+        "kategori": "IADE_ITIRAZ",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your CHARGEBACK_DISPUTE complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.7109072358768732,
+          "oncelik": 0.870098066010375
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 8,
+      "text": "Yaptığım EFT 3 saattir karşı hesaba geçmedi.",
+      "expected_category": "TRANSFER_DELAY",
+      "expected_urgency": "MEDIUM",
+      "latency_ms": 492.79,
+      "response": {
+        "id": 11,
+        "kategori": "TRANSFER_GECIKMESI",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your TRANSFER_DELAY complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6579089156310843,
+          "oncelik": 0.8562894530342078
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 9,
+      "text": "FAST transferim alıcıya düşmedi, acil para lazım.",
+      "expected_category": "TRANSFER_DELAY",
+      "expected_urgency": "HIGH",
+      "latency_ms": 483.72,
+      "response": {
+        "id": 12,
+        "kategori": "TRANSFER_GECIKMESI",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your TRANSFER_DELAY complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6256602471160949,
+          "oncelik": 0.714627646116644
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 10,
+      "text": "Mobil uygulamaya giriş yapamıyorum.",
+      "expected_category": "ACCESS_LOGIN_MOBILE",
+      "expected_urgency": "HIGH",
+      "latency_ms": 500.64,
+      "response": {
+        "id": 13,
+        "kategori": "ERISIM_GIRIS_MOBIL",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your ACCESS_LOGIN_MOBILE complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.8313474415986892,
+          "oncelik": 0.9809363706804918
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 11,
+      "text": "Şifremi unuttum, yenileme linki gelmiyor, email: test@email.com",
+      "expected_category": "ACCESS_LOGIN_MOBILE",
+      "expected_urgency": "HIGH",
+      "pii_status": "MASKED",
+      "latency_ms": 533.54,
+      "response": {
+        "id": 14,
+        "kategori": "ERISIM_GIRIS_MOBIL",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your ACCESS_LOGIN_MOBILE complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": true,
+        "review_id": "16bddb7a-a9c7-4bc9-9791-85e5d8f7fee1",
+        "guven_skorlari": {
+          "kategori": 0.4865529851915133,
+          "oncelik": 0.7625472360857666
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 12,
+      "text": "OTP kodu gelmediği için giriş yapamıyorum.",
+      "expected_category": "ACCESS_LOGIN_MOBILE",
+      "expected_urgency": "HIGH",
+      "latency_ms": 516.95,
+      "response": {
+        "id": 15,
+        "kategori": "ERISIM_GIRIS_MOBIL",
+        "oncelik": "RED",
+        "oneri": "Dear Customer, we received your ACCESS_LOGIN_MOBILE complaint (Urgency: RED). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.8088012749404215,
+          "oncelik": 0.964437554288486
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 13,
+      "text": "Kredi kartı limitimi artırmak istiyorum.",
+      "expected_category": "CARD_LIMIT_CREDIT",
+      "expected_urgency": "LOW",
+      "latency_ms": 504.49,
+      "response": {
+        "id": 16,
+        "kategori": "KART_LIMIT_KREDI",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CARD_LIMIT_CREDIT complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.7567202981416784,
+          "oncelik": 0.9468155618156562
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 14,
+      "text": "Limit artırımı için hangi belgeler gerekiyor?",
+      "expected_category": "CARD_LIMIT_CREDIT",
+      "expected_urgency": "LOW",
+      "latency_ms": 581.24,
+      "response": {
+        "id": 17,
+        "kategori": "KART_LIMIT_KREDI",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CARD_LIMIT_CREDIT complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6837635460273543,
+          "oncelik": 0.858287143316003
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 15,
+      "text": "Şube çalışma saatleriniz nedir?",
+      "expected_category": "INFORMATION_REQUEST",
+      "expected_urgency": "LOW",
+      "latency_ms": 536.38,
+      "response": {
+        "id": 18,
+        "kategori": "BILGI_TALEBI",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your INFORMATION_REQUEST complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.8024347453374644,
+          "oncelik": 0.8728552957831127
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 16,
+      "text": "IBAN numaramı nereden görebilirim?",
+      "expected_category": "INFORMATION_REQUEST",
+      "expected_urgency": "LOW",
+      "latency_ms": 542.25,
+      "response": {
+        "id": 19,
+        "kategori": "BILGI_TALEBI",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your INFORMATION_REQUEST complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6512895174574811,
+          "oncelik": 0.7562355546343017
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 17,
+      "text": "Yeni kampanya detaylarını öğrenmek istiyorum.",
+      "expected_category": "CAMPAIGN_POINTS_REWARDS",
+      "expected_urgency": "LOW",
+      "latency_ms": 512.84,
+      "response": {
+        "id": 20,
+        "kategori": "KAMPANYA_PUAN_ODUL",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CAMPAIGN_POINTS_REWARDS complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6786562743808023,
+          "oncelik": 0.8955124911320181
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 18,
+      "text": "Puanlarım ne zaman yüklenecek?",
+      "expected_category": "CAMPAIGN_POINTS_REWARDS",
+      "expected_urgency": "LOW",
+      "latency_ms": 487.41,
+      "response": {
+        "id": 21,
+        "kategori": "KAMPANYA_PUAN_ODUL",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CAMPAIGN_POINTS_REWARDS complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.6534895501544273,
+          "oncelik": 0.9427183137892752
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 19,
+      "text": "Sadakat puanlarım silinmiş, tel: 05551234567",
+      "expected_category": "CAMPAIGN_POINTS_REWARDS",
+      "expected_urgency": "LOW",
+      "pii_status": "MASKED",
+      "latency_ms": 463.23,
+      "response": {
+        "id": 22,
+        "kategori": "KAMPANYA_PUAN_ODUL",
+        "oncelik": "GREEN",
+        "oneri": "Dear Customer, we received your CAMPAIGN_POINTS_REWARDS complaint (Urgency: GREEN). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": false,
+        "review_id": null,
+        "guven_skorlari": {
+          "kategori": 0.734989384146094,
+          "oncelik": 0.8415513999074129
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    },
+    {
+      "id": 20,
+      "text": "Kart aidatı için iade talep ediyorum.",
+      "expected_category": "CARD_LIMIT_CREDIT",
+      "expected_urgency": "MEDIUM",
+      "latency_ms": 505.88,
+      "response": {
+        "id": 23,
+        "kategori": "KART_LIMIT_KREDI",
+        "oncelik": "YELLOW",
+        "oneri": "Dear Customer, we received your CARD_LIMIT_CREDIT complaint (Urgency: YELLOW). We are working on it. (MOCK RESPONSE)",
+        "durum": "ANALIZ_EDILDI",
+        "kaynaklar": [
+          {
+            "dokuman_adi": "MockDoc",
+            "kaynak": "MockSource",
+            "ozet": "Mock snippet"
+          }
+        ],
+        "insan_incelemesi_gerekli": true,
+        "review_id": "cb4ecdd7-1731-4a28-a218-ebd341dc1d4d",
+        "guven_skorlari": {
+          "kategori": 0.3784287636390467,
+          "oncelik": 0.44852958210087585
+        },
+        "sistem_durumu": {
+          "rag_durumu": "OK",
+          "llm_durumu": "OK"
+        }
+      },
+      "category_match": true,
+      "urgency_match": false
+    }
+  ],
+  "category_accuracy": 90.0,
+  "urgency_accuracy": 0.0,
+  "pii_leak_rate": 25.0,
+  "latency_avg_ms": 521.28,
+  "latency_p95_ms": 797.38
+}

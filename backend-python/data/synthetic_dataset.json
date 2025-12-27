@@ -1,0 +1,92 @@
+[
+    {
+        "text": "kartımı kaybettim iptal etmem lazım ACİL!!!!",
+        "category": "FRAUD_UNAUTHORIZED_TX",
+        "urgency": "RED",
+        "source": "synthetic_manual_1"
+    },
+    {
+        "text": "yahu bu ne biçim iş hesabımdan para çekilmiş haberim yok???",
+        "category": "FRAUD_UNAUTHORIZED_TX",
+        "urgency": "RED",
+        "source": "synthetic_manual_2"
+    },
+    {
+        "text": "alo kartım çalındı galiba cüzdanım yok",
+        "category": "FRAUD_UNAUTHORIZED_TX",
+        "urgency": "RED",
+        "source": "synthetic_manual_3"
+    },
+    {
+        "text": "eft yaptım hala düşmedi karşıya ne zaman gider",
+        "category": "TRANSFER_DELAY",
+        "urgency": "YELLOW",
+        "source": "synthetic_manual_4"
+    },
+    {
+        "text": "para gönderdim ama gitmedi görünüyor bi bakar mısınız",
+        "category": "TRANSFER_DELAY",
+        "urgency": "YELLOW",
+        "source": "synthetic_manual_5"
+    },
+    {
+        "text": "fast ile attım para nerede kaldı saatler oldu",
+        "category": "TRANSFER_DELAY",
+        "urgency": "YELLOW",
+        "source": "synthetic_manual_6"
+    },
+    {
+        "text": "şifremi unuttum giremiyorum uygulamaya",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "RED",
+        "source": "synthetic_manual_7"
+    },
+    {
+        "text": "mobil şube açılmıyor hata verip duruyor",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "RED",
+        "source": "synthetic_manual_8"
+    },
+    {
+        "text": "sms gelmiyor giriş yapamıyorum bi yardım edin",
+        "category": "ACCESS_LOGIN_MOBILE",
+        "urgency": "RED",
+        "source": "synthetic_manual_9"
+    },
+    {
+        "text": "limit artışı istiyom kart yetmiyo hiçbir şeye",
+        "category": "CARD_LIMIT_CREDIT",
+        "urgency": "GREEN",
+        "source": "synthetic_manual_10"
+    },
+    {
+        "text": "kredi kartı limitimi yükseltmek için ne yapmam gerek",
+        "category": "CARD_LIMIT_CREDIT",
+        "urgency": "GREEN",
+        "source": "synthetic_manual_11"
+    },
+    {
+        "text": "bu ayki iadelerim yatmadı neden acaba",
+        "category": "CHARGEBACK_DISPUTE",
+        "urgency": "YELLOW",
+        "source": "synthetic_manual_12"
+    },
+    {
+        "text": "yanlış çekim yapılmış markette iptal edin şunu",
+        "category": "CHARGEBACK_DISPUTE",
+        "urgency": "YELLOW",
+        "source": "synthetic_manual_13"
+    },
+    {
+        "text": "kampanya puanlarım yüklenmedi hala bekliyorum",
+        "category": "CAMPAIGN_POINTS_REWARDS",
+        "urgency": "GREEN",
+        "source": "synthetic_manual_14"
+    },
+    {
+        "text": "mil puanlarımı nasıl kullanırım uçak bileti için",
+        "category": "CAMPAIGN_POINTS_REWARDS",
+        "urgency": "GREEN",
+        "source": "synthetic_manual_15"
+    }
+]

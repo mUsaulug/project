@@ -1,0 +1,314 @@
+{
+    "info": {
+        "_postman_id": "complaintops-copilot-demo",
+        "name": "ComplaintOps Copilot Demo",
+        "description": "Demo collection for ComplaintOps Copilot MVP - Bankacılık Şikayet Yönetim Sistemi",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "java_base_url",
+            "value": "http://localhost:8080",
+            "type": "string"
+        },
+        {
+            "key": "python_base_url",
+            "value": "http://localhost:8000",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Java API",
+            "item": [
+                {
+                    "name": "POST /api/sikayet - Fraud Örneği",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"metin\": \"Kartımdan bilgim dışında 5000 TL çekilmiş. TC: 12345678901, IBAN: TR330006100519786457841326\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{java_base_url}}/api/sikayet",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "sikayet"
+                            ]
+                        },
+                        "description": "Dolandırıcılık şikayeti - PII maskelenir, FRAUD_UNAUTHORIZED_TX kategorisi"
+                    }
+                },
+                {
+                    "name": "POST /api/sikayet - Transfer Gecikmesi",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"metin\": \"EFT yaptım 3 saattir ulaşmadı, acil para lazım\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{java_base_url}}/api/sikayet",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "sikayet"
+                            ]
+                        },
+                        "description": "Transfer gecikmesi şikayeti - TRANSFER_DELAY kategorisi"
+                    }
+                },
+                {
+                    "name": "POST /api/sikayet - Chargeback",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"metin\": \"İade ettiğim ürünün parası hala yatmadı, 10 gün oldu\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{java_base_url}}/api/sikayet",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "sikayet"
+                            ]
+                        },
+                        "description": "Chargeback/iade şikayeti - CHARGEBACK_DISPUTE kategorisi"
+                    }
+                },
+                {
+                    "name": "POST /api/analyze - English API",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"I cannot login to mobile app, password reset link is not coming\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{java_base_url}}/api/analyze",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "analyze"
+                            ]
+                        },
+                        "description": "English API endpoint - returns raw category/urgency"
+                    }
+                },
+                {
+                    "name": "GET /api/complaints - List All",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{java_base_url}}/api/complaints",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "complaints"
+                            ]
+                        },
+                        "description": "Tüm şikayetleri listele"
+                    }
+                },
+                {
+                    "name": "GET /api/complaints/{id}",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{java_base_url}}/api/complaints/1",
+                            "host": [
+                                "{{java_base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "complaints",
+                                "1"
+                            ]
+                        },
+                        "description": "ID ile şikayet detayı"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Python AI Service",
+            "item": [
+                {
+                    "name": "POST /mask - PII Masking",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "X-Request-ID",
+                                "value": "test-request-001"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"Adım Ahmet Yılmaz, TC: 12345678901, IBAN: TR330006100519786457841326, Tel: 05551234567\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{python_base_url}}/mask",
+                            "host": [
+                                "{{python_base_url}}"
+                            ],
+                            "path": [
+                                "mask"
+                            ]
+                        },
+                        "description": "PII maskeleme servisi - TCKN, IBAN, telefon maskelenir"
+                    }
+                },
+                {
+                    "name": "POST /predict - Triage",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "X-Request-ID",
+                                "value": "test-request-002"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"Kartımdan bilgim dışında işlem yapılmış\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{python_base_url}}/predict",
+                            "host": [
+                                "{{python_base_url}}"
+                            ],
+                            "path": [
+                                "predict"
+                            ]
+                        },
+                        "description": "ML triage - kategori ve aciliyet tahmini"
+                    }
+                },
+                {
+                    "name": "POST /retrieve - RAG",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "X-Request-ID",
+                                "value": "test-request-003"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"EFT işlemim karşı tarafa geçmedi\",\n  \"category\": \"TRANSFER_DELAY\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{python_base_url}}/retrieve",
+                            "host": [
+                                "{{python_base_url}}"
+                            ],
+                            "path": [
+                                "retrieve"
+                            ]
+                        },
+                        "description": "RAG - ilgili SOP dokümanlarını getir"
+                    }
+                },
+                {
+                    "name": "POST /generate - LLM Response",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "X-Request-ID",
+                                "value": "test-request-004"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"text\": \"Hesabımdan [MASKED_AMOUNT] çekildi\",\n  \"category\": \"FRAUD_UNAUTHORIZED_TX\",\n  \"urgency\": \"HIGH\",\n  \"relevant_sources\": []\n}"
+                        },
+                        "url": {
+                            "raw": "{{python_base_url}}/generate",
+                            "host": [
+                                "{{python_base_url}}"
+                            ],
+                            "path": [
+                                "generate"
+                            ]
+                        },
+                        "description": "LLM yanıt üretimi - action plan ve müşteri yanıtı"
+                    }
+                },
+                {
+                    "name": "GET / - Health Check",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{python_base_url}}/",
+                            "host": [
+                                "{{python_base_url}}"
+                            ],
+                            "path": [
+                                ""
+                            ]
+                        },
+                        "description": "Servis sağlık kontrolü"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+[
+  {"text": "Kartımdan bilgim dışında 500 TL çekilmiş.", "category": "FRAUD_UNAUTHORIZED_TX", "urgency": "RED"},
+  {"text": "Hesabımda tanımadığım bir işlem var, iptal edin.", "category": "FRAUD_UNAUTHORIZED_TX", "urgency": "RED"},
+  {"text": "Kredi kartım çalındı, hemen kapatın.", "category": "FRAUD_UNAUTHORIZED_TX", "urgency": "RED"},
+  {"text": "Mobil bankacılıkta şüpheli işlem görüyorum.", "category": "FRAUD_UNAUTHORIZED_TX", "urgency": "RED"},
+  {"text": "Kartımdan gece saatlerinde işlem yapılmış.", "category": "FRAUD_UNAUTHORIZED_TX", "urgency": "RED"},
+
+  {"text": "Aynı işlemden iki kere ücret alınmış.", "category": "CHARGEBACK_DISPUTE", "urgency": "YELLOW"},
+  {"text": "İade ettiğim ürünün parası hala yatmadı.", "category": "CHARGEBACK_DISPUTE", "urgency": "YELLOW"},
+  {"text": "Siparişi iptal ettim ama param iade edilmedi.", "category": "CHARGEBACK_DISPUTE", "urgency": "YELLOW"},
+  {"text": "Abonelik iptal edildi ama ücret çekildi.", "category": "CHARGEBACK_DISPUTE", "urgency": "YELLOW"},
+  {"text": "Yanlış ürüne ücret ödedim, iade istiyorum.", "category": "CHARGEBACK_DISPUTE", "urgency": "YELLOW"},
+
+  {"text": "Yaptığım EFT 3 saattir karşı hesaba geçmedi.", "category": "TRANSFER_DELAY", "urgency": "YELLOW"},
+  {"text": "Havale işlemim hala beklemede görünüyor.", "category": "TRANSFER_DELAY", "urgency": "YELLOW"},
+  {"text": "Para transferi yaptım ama ulaşmadı.", "category": "TRANSFER_DELAY", "urgency": "YELLOW"},
+  {"text": "FAST transferim alıcıya düşmedi.", "category": "TRANSFER_DELAY", "urgency": "YELLOW"},
+  {"text": "EFT bugün işleme alınmadı.", "category": "TRANSFER_DELAY", "urgency": "YELLOW"},
+
+  {"text": "Mobil uygulamaya giriş yapamıyorum.", "category": "ACCESS_LOGIN_MOBILE", "urgency": "RED"},
+  {"text": "Şifremi unuttum, yenileme linki gelmiyor.", "category": "ACCESS_LOGIN_MOBILE", "urgency": "RED"},
+  {"text": "İnternet bankacılığı açılmıyor, hata veriyor.", "category": "ACCESS_LOGIN_MOBILE", "urgency": "RED"},
+  {"text": "Uygulama sürekli hata veriyor.", "category": "ACCESS_LOGIN_MOBILE", "urgency": "RED"},
+  {"text": "OTP kodu gelmediği için giriş yapamıyorum.", "category": "ACCESS_LOGIN_MOBILE", "urgency": "RED"},
+
+  {"text": "Kredi kartı limitimi nasıl arttırabilirim?", "category": "CARD_LIMIT_CREDIT", "urgency": "GREEN"},
+  {"text": "Limit artırımı için hangi belgeler gerekiyor?", "category": "CARD_LIMIT_CREDIT", "urgency": "GREEN"},
+  {"text": "Kredi kartı limit artış talebim reddedildi.", "category": "CARD_LIMIT_CREDIT", "urgency": "GREEN"},
+  {"text": "Kart limitimi yükseltmek istiyorum.", "category": "CARD_LIMIT_CREDIT", "urgency": "GREEN"},
+  {"text": "Limit güncellemesi ne zaman yapılır?", "category": "CARD_LIMIT_CREDIT", "urgency": "GREEN"},
+
+  {"text": "Şube çalışma saatleriniz nedir?", "category": "INFORMATION_REQUEST", "urgency": "GREEN"},
+  {"text": "IBAN numaramı nereden görebilirim?", "category": "INFORMATION_REQUEST", "urgency": "GREEN"},
+  {"text": "Yeni hesap açma şartları nelerdir?", "category": "INFORMATION_REQUEST", "urgency": "GREEN"},
+  {"text": "Müşteri hizmetleri numaranız nedir?", "category": "INFORMATION_REQUEST", "urgency": "GREEN"},
+  {"text": "Kredi kartı ekstresi nasıl görüntülenir?", "category": "INFORMATION_REQUEST", "urgency": "GREEN"},
+
+  {"text": "Yeni kampanya detaylarını öğrenmek istiyorum.", "category": "CAMPAIGN_POINTS_REWARDS", "urgency": "GREEN"},
+  {"text": "Puanlarım ne zaman yüklenecek?", "category": "CAMPAIGN_POINTS_REWARDS", "urgency": "GREEN"},
+  {"text": "Mil puanı kampanyasına nasıl katılırım?", "category": "CAMPAIGN_POINTS_REWARDS", "urgency": "GREEN"},
+  {"text": "Cashback kampanyasında geri ödeme görünmüyor.", "category": "CAMPAIGN_POINTS_REWARDS", "urgency": "GREEN"},
+  {"text": "Sadakat puanlarım silinmiş.", "category": "CAMPAIGN_POINTS_REWARDS", "urgency": "GREEN"}
+]

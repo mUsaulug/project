@@ -1,0 +1,159 @@
+{
+    "version": "1.0",
+    "description": "ComplaintOps Copilot Golden Set - 20 Örnek",
+    "created": "2024-12-27",
+    "examples": [
+        {
+            "id": 1,
+            "text": "Kartımdan bilgim dışında 500 TL çekilmiş.",
+            "expected_category": "FRAUD_UNAUTHORIZED_TX",
+            "expected_urgency": "HIGH",
+            "pii_present": false
+        },
+        {
+            "id": 2,
+            "text": "Hesabımda tanımadığım bir işlem var, TC: 12345678901",
+            "expected_category": "FRAUD_UNAUTHORIZED_TX",
+            "expected_urgency": "HIGH",
+            "pii_present": true,
+            "pii_types": [
+                "TCKN"
+            ]
+        },
+        {
+            "id": 3,
+            "text": "Kredi kartım çalındı, hemen kapatın.",
+            "expected_category": "FRAUD_UNAUTHORIZED_TX",
+            "expected_urgency": "HIGH",
+            "pii_present": false
+        },
+        {
+            "id": 4,
+            "text": "Mobil bankacılıkta şüpheli işlem görüyorum, IBAN: TR330006100519786457841326",
+            "expected_category": "FRAUD_UNAUTHORIZED_TX",
+            "expected_urgency": "HIGH",
+            "pii_present": true,
+            "pii_types": [
+                "TR_IBAN"
+            ]
+        },
+        {
+            "id": 5,
+            "text": "Aynı işlemden iki kere ücret alınmış.",
+            "expected_category": "CHARGEBACK_DISPUTE",
+            "expected_urgency": "MEDIUM",
+            "pii_present": false
+        },
+        {
+            "id": 6,
+            "text": "İade ettiğim ürünün parası hala yatmadı.",
+            "expected_category": "CHARGEBACK_DISPUTE",
+            "expected_urgency": "MEDIUM",
+            "pii_present": false
+        },
+        {
+            "id": 7,
+            "text": "Siparişi iptal ettim ama param iade edilmedi.",
+            "expected_category": "CHARGEBACK_DISPUTE",
+            "expected_urgency": "MEDIUM",
+            "pii_present": false
+        },
+        {
+            "id": 8,
+            "text": "Yaptığım EFT 3 saattir karşı hesaba geçmedi.",
+            "expected_category": "TRANSFER_DELAY",
+            "expected_urgency": "MEDIUM",
+            "pii_present": false
+        },
+        {
+            "id": 9,
+            "text": "FAST transferim alıcıya düşmedi, acil para lazım.",
+            "expected_category": "TRANSFER_DELAY",
+            "expected_urgency": "HIGH",
+            "pii_present": false
+        },
+        {
+            "id": 10,
+            "text": "Mobil uygulamaya giriş yapamıyorum.",
+            "expected_category": "ACCESS_LOGIN_MOBILE",
+            "expected_urgency": "HIGH",
+            "pii_present": false
+        },
+        {
+            "id": 11,
+            "text": "Şifremi unuttum, yenileme linki gelmiyor, email: test@email.com",
+            "expected_category": "ACCESS_LOGIN_MOBILE",
+            "expected_urgency": "HIGH",
+            "pii_present": true,
+            "pii_types": [
+                "EMAIL_ADDRESS"
+            ]
+        },
+        {
+            "id": 12,
+            "text": "OTP kodu gelmediği için giriş yapamıyorum.",
+            "expected_category": "ACCESS_LOGIN_MOBILE",
+            "expected_urgency": "HIGH",
+            "pii_present": false
+        },
+        {
+            "id": 13,
+            "text": "Kredi kartı limitimi artırmak istiyorum.",
+            "expected_category": "CARD_LIMIT_CREDIT",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 14,
+            "text": "Limit artırımı için hangi belgeler gerekiyor?",
+            "expected_category": "CARD_LIMIT_CREDIT",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 15,
+            "text": "Şube çalışma saatleriniz nedir?",
+            "expected_category": "INFORMATION_REQUEST",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 16,
+            "text": "IBAN numaramı nereden görebilirim?",
+            "expected_category": "INFORMATION_REQUEST",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 17,
+            "text": "Yeni kampanya detaylarını öğrenmek istiyorum.",
+            "expected_category": "CAMPAIGN_POINTS_REWARDS",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 18,
+            "text": "Puanlarım ne zaman yüklenecek?",
+            "expected_category": "CAMPAIGN_POINTS_REWARDS",
+            "expected_urgency": "LOW",
+            "pii_present": false
+        },
+        {
+            "id": 19,
+            "text": "Sadakat puanlarım silinmiş, tel: 05551234567",
+            "expected_category": "CAMPAIGN_POINTS_REWARDS",
+            "expected_urgency": "LOW",
+            "pii_present": true,
+            "pii_types": [
+                "PHONE_NUMBER"
+            ]
+        },
+        {
+            "id": 20,
+            "text": "Kart aidatı için iade talep ediyorum.",
+            "expected_category": "CARD_LIMIT_CREDIT",
+            "expected_urgency": "MEDIUM",
+            "pii_present": false
+        }
+    ]
+}
