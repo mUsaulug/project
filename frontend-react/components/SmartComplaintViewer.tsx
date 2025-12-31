@@ -87,7 +87,7 @@ const SmartComplaintViewer: React.FC<Props> = ({ data }) => {
           </div>
 
           {/* Security Alert if Masking Failed */}
-          {data.maskedText.includes("MASKING_ERROR") && (
+          {data.maskedText?.includes("MASKING_ERROR") && (
             <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg flex gap-2 items-center text-red-700 text-xs font-bold">
               <Icons.Alert />
               <span>KRİTİK: Maskeleme servisi yanıt vermedi. İçerik güvenlik nedeniyle gizlendi.</span>

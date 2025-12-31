@@ -8,7 +8,7 @@ class AbstractLLMProvider(ABC):
         Generates a structured response for a banking complaint.
 
         Args:
-            text: The customer complaint text.
+            text: The customer complaint xt.
             category: Detected category of the complaint.
             urgency: Detected urgency level.
             snippets: List of relevant RAG snippets.

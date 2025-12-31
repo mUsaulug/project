@@ -56,6 +56,7 @@ public class ComplaintController {
         response.setOneri(buildOneri(complaint));
         response.setDurum(mapStatusToTurkish(complaint.getStatus()));
         response.setKaynaklar(parseKaynaklar(complaint.getSources()));
+        response.setMaskedText(complaint.getMaskedText());
 
         // Human-in-the-Loop fields
         response.setInsanIncelemesiGerekli(
@@ -293,6 +294,9 @@ public class ComplaintController {
 
         @JsonProperty("kaynaklar")
         private List<KaynakItem> kaynaklar; // RAG kaynakları
+
+        @JsonProperty("maskedText")
+        private String maskedText; // Maskelenmiş metin
 
         @JsonProperty("insan_incelemesi_gerekli")
         private Boolean insanIncelemesiGerekli; // Human review needed?
